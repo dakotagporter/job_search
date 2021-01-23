@@ -3,7 +3,7 @@
 
 # App imports
 import os
-import Flask
+from flask import Flask, render_template
 
 # Local file imports
 
@@ -25,3 +25,10 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     # DB.init(app)
+
+    @app.route("/")
+    @app.route("/home")
+    def home():
+        return render_template("base.html", title="Home")
+
+    return app

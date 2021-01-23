@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JobHub - {{ title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulmaswatch/0.8.1/spacelab/bulmaswatch.min.css" />
+    <link rel="shortcut icon" href="">
+</head>
+<body>
+  <section class="hero is-primary is-fullheight">
+      <div class="hero-head">
+          <nav class="navbar">
+              <div class="container">
+                  <div id="navbarMenuHeroA" class="navbar-menu">
+                      <a href="https://airbnb.com/" target="blank_">
+                        <img src="https://venturebeat.com/wp-content/uploads/2014/07/airbnb-logo-red.jpg?fit=800%2C450&strip=all" alt="AirBnB" width="200" height="112">
+                      </a>
+                      <div class="navbar-end">
+                          <a href="" class="navbar-item">
+                            Home
+                          </a>
+                          <a href="" class="navbar-item">
+                            Upload
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </nav>
+      </div>
+      <article class="home">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               <big>
+                AirBnB is the "B"read and "B"utter of the travel industry. Many people discover their second income through renting out one of
+                their own properties. Using historical data from our good friends at AirBnB, we can get you started on this path to glory with just
+                a few pieces of information on your property of interest.
+               </big>
+               <img src="https://media.cntraveler.com/photos/5fad3ff8127cb0af541a0235/3:1/w_6000,h_2000,c_limit/HolidayTravel-2020-GettyImages-1016227458.jpg" alt="Travel" width="6000" height="2000">
+               {% endblock %}
+            </div>
+        </div>
+      </article>
+  </section>
+</body>
+</html>
