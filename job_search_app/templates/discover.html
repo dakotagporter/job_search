@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+  <style>
+  </style>
+</head>
+<div class="box" style="width:66.6%; margin:auto;">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div class="notification is-danger">
+    <big>{{ messages[0][0] }}.</big>
+    <br>
+    {% for op in messages[0][1] %}
+    - {{ op }}
+    <br>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endwith %}
+  <form enctype='multipart/form-data' method="POST" action="/discover">
+      <div class="field">
+          <div class="control">
+              <b><big>Job Title:</big></b>
+              <input class="input is-large" type="text" name="title" placeholder="Job Title" autofocus="">
+          </div>
+      </div>
+
+      <div class="field">
+          <div class="control">
+              <b><big>City:</big></b>
+              <input class="input is-large" type="text" name="city" placeholder="City" autofocus="">
+          </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <b><big>State:</big></b>
+          <select name="state">
+              <option value="" selected>--Please choose an option--</option>
+              {% for state in states %}
+              <option value="{{ state }}">{{ state }}</option>
+              {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+          <div class="control">
+              <b><big>Ideal Job Description:</big></b>
+              <input class="input is-large" type="text" name="desc" placeholder="Description" autofocus="">
+              <br><small>*1000 character limit</small>
+          </div>
+      </div>
+
+      <button class="button is-block is-info is-large is-fullwidth">Search</button>
+  </form>
+</div>
+{% endblock %}
