@@ -72,9 +72,9 @@ def create_app():
 
         DB.session.commit()
 
-        # Input data into model
-        data = Job.query.filter_by(Job.desc)
-        return str(data)
+        #
+        data = Job.query.all()
+        return str(data[0].desc)
         preprocessor(data)
 
     return app
